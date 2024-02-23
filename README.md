@@ -12,14 +12,17 @@ The assistant offers guidance on splitting multi-focused Zettels into individual
 This repository provides the operational instructions for the Zettel Critique Assistant GPT. 
 
 ## Usage
-Access the GPT for use at: [Zettel Critique Assistant](https://chat.openai.com/g/g-z5XcnT7cQ-zettel-critique-assistant). 
 
-The GPT offers four conversation starters:
+Access the GPT for use at: [Zettel Critique Assistant](https://chat.openai.com/g/g-z5XcnT7cQ-zettel-critique-assistant).
 
-1. Critique this Zettel.
-2. Evaluate the single focus of this Zettel. (The GPT will state the single focus of the Zettel or flag changes of focus.)
-3. Convert a multi-focused Zettel to a structure note.
-4. Create a structure note from a list of note titles and abstracts.
+To interact with the GPT, you may use the following conversation starters as input commands:
+
+1. "Critique this Zettel" – for a comprehensive review based on Zettelkasten principles.
+2. "Evaluate the single focus of this Zettel" – the GPT will identify the core focus or suggest improvements for clarity.
+3. "Convert this multi-focused Zettel into a structure note" – for transforming complex notes into organized sections.
+4. "Create a structure note from these titles and abstracts" – for compiling a series of notes into a coherent outline.
+
+Please format your Zettel content or questions clearly to ensure the best response from the assistant. Share your experiences or feedback to help improve future iterations of the tool.
 
 ## Compatibility
 
