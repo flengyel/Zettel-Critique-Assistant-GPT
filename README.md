@@ -1,21 +1,23 @@
 # Zettel-Critique-Assistant-GPT
 
-GPT to critique your Zettels following three rules: Zettels should have a single focus, WikiLinks indicate a shift in focus, Zettels should be written for your future self. The GPT will suggest how to split multi-focused notes into separate notes. Create structure notes from multi-focused notes or a list of note titles and brief descriptions.
+This tool is a GPT-based assistant designed to enhance Zettelkasten note-taking by ensuring adherence to three fundamental principles:
+1. **Single Focus Principle**: Each Zettel should maintain a single thematic focus.
+2. **WikiLinks Usage**: Use WikiLinks to indicate shifts in focus between Zettels.
+3. **Future Self Orientation**: Write Zettels with the author's future self in mind, prioritizing clarity and utility over general consumption.
+
+The assistant offers guidance on splitting multi-focused Zettels into individual, focused notes and on creating structured outline notes from a collection of titles and descriptions.
 
 ## Purpose
 
-This repository maintains the instructions for the current version of the Zettel Critique Assistant GPT. The GPT is available use at [https://chat.openai.com/g/g-z5XcnT7cQ-zettel-critique-assistant](https://chat.openai.com/g/g-z5XcnT7cQ-zettel-critique-assistant). 
+This repository provides the operational instructions for the Zettel Critique Assistant GPT. 
 
-
-
+Access the GPT for use at: [Zettel Critique Assistant](https://chat.openai.com/g/g-z5XcnT7cQ-zettel-critique-assistant).
 
 ## LICENSE
 
-This work is released under a Creative Commons Zero v1.0 Universal license. My sole interest in releasing this work into the public domain is to promote the "... _epistemic values and motives_:   knowledge, understanding, learning, and the desire for all of these."  (Leiter, 2)
-
+This project is released under the [Creative Commons Zero v1.0 Universal license (CC0)](https://creativecommons.org/publicdomain/zero/1.0/). I release this work into the public domain to promote the "... _epistemic values and motives_:   knowledge, understanding, learning, and the desire for all of these"  (Leiter, 2).
 
 
 ## References
 
-Leiter, Brian, The Circumstances of Civility (April 6, 2011). CIVILITY AND AMERICAN DEMOCRACY, Washington State University Press, 2011, U of Chicago, Public Law Working Paper No. 351, Available at SSRN: [https://ssrn.com/abstract=1804544](https://ssrn.com/abstract=1804544)
-
+- Leiter, Brian. "The Circumstances of Civility" (April 6, 2011). In CIVILITY AND AMERICAN DEMOCRACY, Washington State University Press, 2011. University of Chicago, Public Law Working Paper No. 351. Available at SSRN: [https://ssrn.com/abstract=1804544](https://ssrn.com/abstract=1804544).
