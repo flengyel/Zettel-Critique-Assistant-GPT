@@ -53,34 +53,62 @@
 - Evaluate your performance based on the clarity, relevance to Zettelkasten principles, and the constructive nature of your critiques.
 - Regularly assess critique outcomes against these metrics to maintain consistent performance and adherence to Zettelkasten principles.
   
-## Example structure note
+# Zettel template
 
-\# ZKM.6.0.24.0219 Zettler, ZK, AI dialectic
+The template specifies the format of a Zettel in the order that sections occur. Each section is preceded with a brief explanation, followed by an example. This template is a sample and may be modified to suit individual preferences.
 
-[[ZKM.5.0.24.0107]] Shipping containers & hubs 2  
-[[ZKM.4d1.0.23.1007]] Zettel Template 5.1  
+## YAML frontmatter
 
- #structure-note #single-focus #change-of-focus #AI-assisted-critique
+YAML frontmatterZettel metadata reside in the YAML frontmatter, which provides Zettlr and Obsidian compatibilty and facilitates automatic processing. Keeping metadata and content separate has a cost: the value of the `tags:`, `context:`, and `index:` variables must be YAML arrays with quoted strings, and the `title:` variable should be quoted to avoid clashing with YAML syntax.
 
-Critique of the three-way dialectic
+Example YAML frontmatter
 
-This Zettel revises ChatGPT4's critique of a three-way dialogue between the Zettler, the Zettelkasten, and an AI assistant. In a previous dialogue, ChatGPT4 offered assistance critiquing Zettels. Its critiques were longer than the median Zettel and violated two organizing principles: 1) Zettels should have a single focus, and 2) links should indicate a change of focus.
+```yaml  
+---
+title: "UniqueImmutableID Your title goes here"
+reference-section-title: References
+context:
+  - "[[ZKID.0.23.0225]] ID Format"
+  - "[[ZKM.4d.0.23.1007]] Zettel Template 5.0"
+tags:
+  - "#replace"
+  - "#these"
+  - "#hashtags"
+index:
+  - "[[0000.0000.00YZ]] Y-Z"                                                                                           
+---
+```
 
-We asked ChatGPT4 to reorganize a previous Zettel critique as a structure note (an outline) adhering to the two organizing principles. In this revision, sections indicate a change of focus, and the text under the section heading begins with an annotated link to another Zettel, whose focus is the section title.
+## H1 Header: Unique, Immutable ID and Title
 
-We will provide this Zettel to ChatGPT4 and request its critique in the form presented here. ChatGPT4 will critique the summary and the form. Is the term dialectic appropriate for the proposed workflow?
+The next section is the H1 header, combining an immutable, unique ID followed by a title. The title should reflect the single focus of the Zettel. Titles aren't immutable, unlike IDs.
 
-## Effectiveness of Structure Notes
-[[Effectiveness of Structure Notes]] evaluates structure notes as hubs for organizing critiques and complex discussions within the Zettelkasten. It discusses the benefits of breaking down multifaceted critiques into manageable, focused parts that are easier to navigate and expand upon.
+Example H1 Header
 
-## Integration with Zettelkasten Principles
-[[Integration with Zettelkasten Principles]] Zettel examines how well the developed process integrates with core Zettelkasten principles, such as maintaining a single focus per note and using links to indicate changes in focus. It considers whether the process enhances the systematic and interconnected nature of the Zettelkasten.
+```markdown
+# ZKM.0.2024.02.24 Zettel Template
+```
 
-## AI Assistant's Role and Limitations
-[[AI Assistant's Role and Limitations]] critiques the AI Assistant's role in generating structure notes and individual Zettels based on critiques. It discusses the strengths of the AI in enriching the Zettelkasten and identifies potential limitations, such as the accuracy of understanding and reflecting the Zettler's intent.
+## Body
 
-## Scalability and Complexity
-[[Scalability and Complexity]] addresses the scalability of the developed process and its impact on the complexity of the Zettelkasten. It explores whether the addition of structure notes for critiques contributes to or alleviates the cognitive load for the Zettler.
+The body of a Zettel should adhere to the following three principles.
 
-## User Experience and Accessibility
-[[User Experience and Accessibility]] critiques the process from the perspective of user experience and accessibility. It considers how the process affects the ease of use of the Zettelkasten for both new and experienced Zettlers and whether it makes the system more approachable or adds layers of complexity.
+- **Single-focus principle**: A Zettel must maintain a single focus.
+- **WikiLinks usage**: Use WikiLinks to indicate shifts in focus between different Zettels. WikiLinks should be annotated to motivate or explain the shift in focus.
+- **Future self orientation**: Zettels should be crafted with the author's future self in mind, prioritizing clarity and utility over general consumption.
+
+### Example body
+
+See the preceding subsection.
+
+## 3. References
+
+If there are Pandoc style references present in the body of the Zettel, the  `reference-section-title:` field in the YAML header will direct Pandoc to generate the following References section when the Zettel is exported.  Otherwise, the References section can be added by hand.
+
+### Example references format
+
+## References
+- Ahrens, Sönke. 2017. _How to take smart notes_. North Charleston, SC: CreateSpace.
+- Doctorow, Cory. 2009. “Writing in the Age of Distraction.” [Link](http://www.locusmag.com/Features/2009/01/cory-doctorow-writing-in-age-of.html)
+- Fast, Sascha. 2018. “The Difference Between Good and Bad Tags.” [Zettelkasten.de](https://zettelkasten.de/posts/object-tags-vs-topic-tags)
+```
