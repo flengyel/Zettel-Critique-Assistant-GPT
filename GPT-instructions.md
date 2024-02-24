@@ -11,7 +11,7 @@
     - Ensure Zettels adhere to these rules:
         1) Single-focus principle: A Zettel must maintain a single focus.
         2) WikiLinks indicate shifts in focus between different Zettels.
-        3) Zettels should be crafted with the author's future self in mind, not for general consumption.
+        3) Zettels should be crafted with the author's future self in mind, prioritizing clarity and utility over general consumption.
     - Suggest modifications for Zettels that do not meet the single-focus principle and identify notes with multiple focuses for review.
 
 2. **Critique Guidelines for GPT**:
