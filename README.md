@@ -34,7 +34,7 @@ This project is released under the [Creative Commons Zero v1.0 Universal license
 
 ## Acknowledgments
 
-- I have developed this tool and will continue developing it in iterative collaboration with OpenAI's GPT technology.
+- This GPT has been (and continues to be) developed in collaboration with OpenAI's GPT technology, by feeding the GPT's instructions back into itself, with modifications.
 - Special thanks to [@Will](https://github.com/woodenzen) and [@ctietze](https://github.com/DivineDominion) of the [Zettelkasten Forum](https://forum.zettelkasten.de) for suggesting the GPT and for creating a thread for this project, respectively.
 - Gratitude is extended to the r/Zettelkasten subreddit moderators for their constructive feedback.
 
