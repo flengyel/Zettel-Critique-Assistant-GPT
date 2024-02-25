@@ -1,7 +1,7 @@
 # Zettel-Critique-Assistant-GPT
 
 This tool is a GPT-based assistant designed to enhance Zettelkasten note-taking by ensuring adherence to three fundamental principles:
-1. **Single Focus Principle**: Each Zettel should maintain a single thematic focus.
+1. **Single Focus Principle**: Each Zettel should maintain a single focus.
 2. **WikiLinks Usage**: Use WikiLinks to indicate shifts in focus between Zettels.
 3. **Future Self Orientation**: Write Zettels with the author's future self in mind, prioritizing clarity and utility over general consumption.
 
