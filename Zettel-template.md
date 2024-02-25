@@ -44,7 +44,7 @@ The body of a Zettel should adhere to the following three principles.
 2. **WikiLinks usage**: WikiLinks indicate shifts in focus between different Zettels. WikiLinks in the body of the Zettel should be annotated to motivate or explain the shift in focus.
 3. **Future self orientation**: Zettels should be crafted with the author's future self in mind, prioritizing clarity and utility over general consumption.
 
-### A subsection of the Zetttl body
+### Zetttl body sub-sub-section
 
 To keep the explanatoty text within the Zettel body, we describe the remaining sections: **SEE ALSO** and **References**.
 
@@ -73,5 +73,3 @@ To keep the explanatoty text within the Zettel body, we describe the remaining s
 ## References
 
 - Ahrens, Sönke. 2017. _How to take smart notes_. North Charleston, SC: CreateSpace.
-- Doctorow, Cory. 2009. “Writing in the Age of Distraction.” [Link](http://www.locusmag.com/Features/2009/01/cory-doctorow-writing-in-age-of.html)
-- Fast, Sascha. 2018. “The Difference Between Good and Bad Tags.” [Zettelkasten.de](https://zettelkasten.de/posts/object-tags-vs-topic-tags)
