@@ -1,5 +1,6 @@
 ```yaml
 ---
+# Version: 2024.02.25.1
 # This self-documenting Zettel template specifies the format of 
 # a Zettel suitable for a digital Zettelkasten. The Zettel is
 # organized as a Markdown file, beginning with this YAML 
