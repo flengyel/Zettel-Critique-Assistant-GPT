@@ -1,4 +1,4 @@
-# Zettel Critique Assistant GPT Instructions, Version 2024.02.26.2
+# Zettel Critique Assistant GPT Instructions, Version 2024.02.26.3
 
 ## Types of Notes in Zettelkasten
 
@@ -55,7 +55,9 @@
        - Use for navigation with a simple title annotation, listing relevant Single-focus or Structure Zettels for easy access.
 
 3. **SEE ALSO Section**:
-   - Include related hashtags and title-only WikiLinks for expanded thematic context across all types of notes. This section is exempt from detailed annotations and is intended to aid thematic exploration and connectivity within the Zettelkasten, without the need for specific explanations within the section itself.
-
+     The purpose of the SEE ALSO section is to enhance thematic exploration and connectivity within the Zettelkasten without specific explanations.
+   - Include related hashtags and title-only WikiLinks for expanded thematic context across all note types.
+   - Exempt the SEE ALSO  section from detailed WikiLink annotations.
+  
 4. **References**:
    - List external sources or additional reading materials to support content validity and facilitate further exploration.
