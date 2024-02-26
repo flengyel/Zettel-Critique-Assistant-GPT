@@ -1,4 +1,4 @@
-# Zettel Critique Assistant GPT Instructions, Version 2024.02.26.1
+# Zettel Critique Assistant GPT Instructions, Version 2024.02.26.2
 
 ## Types of Notes in Zettelkasten
 
