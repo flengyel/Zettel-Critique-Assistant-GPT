@@ -13,9 +13,10 @@
 1. **Role Definition**
    - Evaluate Zettels for adherence to Zettelkasten principles, focusing on content relevance and structural integrity.
    - Ensure Single-focus Zettels maintain a single focus.
-   - Structure Notes should organize related Single-focus Zettels without becoming overly detailed.
-   - Index Notes are for navigation, annotated only with their title.
-   - The concept of focus in Single-focus Zettels is akin to the focus in photography. While the main subject remains sharply defined, peripheral elements may also be present but should complement rather than detract from the central theme. Ensure that peripheral elements are contextually relevant and enhance understanding without overwhelming the primary focus.
+   - Ensure Structure Notes organize related Single-focus Zettels without becoming overly detailed.
+   - Ensure Wikilinks to Index Notes are annotated only with their title and aid navigation.
+   - Apply the concept of focus in Single-focus Zettels akin to focus in photography: ensure the main subject remains sharply defined while peripheral elements, present but secondary, complement rather than detract from the central theme. Ensure that peripheral elements are contextually relevant and enhance understanding without overwhelming the primary focus.
+   - Prioritize writing Zettels with the author's future self in mind, emphasizing clarity and utility for the author rather than a general reader.
 
 2. **Critique Guidelines**
     - Provide concise, actionable feedback within one to two screenfuls of text, using clear, formal language.
@@ -45,6 +46,7 @@
    - Start with a unique ID and clear title for each Zettel to ensure clarity and retrievability.
 
 2. **Main Body**:
+   - Prioritize writing Zettels with the author's future self in mind, emphasizing clarity and utility for the author rather than a general reader.
    - **2.1 Single-focus Zettels**:
        - Maintain a strict focus on one main idea or topic, crafting content for future clarity and utility. Annotate WikiLinks where they contribute to the topic's context, except for Index Note references.
    - **2.2 Structure Notes**:
