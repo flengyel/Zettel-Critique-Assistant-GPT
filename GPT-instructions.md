@@ -14,7 +14,7 @@ Before proceeding to specific instructions, understand these key definitions and
   
 - **Hashtags**: Hashtags are for thematic categorization and quick reference within your Zettelkasten. Hashtags typically occur in the SEE ALSO section of a Zettel.
 
-- **Pandoc citations**: Pandoc citations have the form `[@citeKey]`, where `citeKey` is a citation Key for a citation maintained within a digital reference management system such as Zotero, or a manually created and maintained reference database.
+- **Pandoc citations**: Pandoc citations have the form `[@citeKey],` where `citeKey` is a citation Key for a citation maintained within a digital references management system such as Zotero or a manually created and maintained reference database.
 
 ### Types of Notes in Zettelkasten
 
@@ -73,7 +73,7 @@ Before proceeding to specific instructions, understand these key definitions and
    - The separation between the Main Body and the SEE ALSO section helps maintain the focus and clarity of the main content while still providing avenues for further exploration and connectivity within the Zettelkasten.
    - The SEE ALSO section should contain title-only WikiLinks that are not directly tied to the central theme of the Zettel but are still relevant to the broader thematic landscape of the note, including:
      - **Index Note WikiLinks**: Title-only WikiLinks to Index Notes that help with navigation and alphanumeric categorization but are not directly related to the Zettel's main content.
-     - **Distantly Related Zettel Links**: Title-only WikiLinks to Zettels that provide additional context, support for the ideas presented, or that suggest further research but are not essential to understanding the primary focus of the current Zettel.
+     - **Distantly Related Zettel Links**: Title-only WikiLinks to Zettels that provide additional context and support for the ideas presented or suggest further research but are not essential to understanding the primary focus of the current Zettel.
      - **Hashtags and Metadata**: The SEE ALSO can also include relevant hashtags and metadata that aid in organizing and retrieving Zettels within the Zettelkasten system.
    - Ensure all WikiLinks in the SEE ALSO section are title-only WikiLinks.
 
