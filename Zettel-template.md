@@ -1,6 +1,6 @@
 ```yaml
 ---
-# Version: 2024.02.25.1
+# Version: 2024.02.28.1
 # This self-documenting Zettel template specifies the format of 
 # a Zettel suitable for a digital Zettelkasten. The Zettel is
 # organized as a Markdown file, beginning with this YAML 
@@ -10,52 +10,79 @@
 # at minimum, the following variables: `title:` and 
 # `reference-section-title:` 
 
-title: "immutableID Zettel Template title"
+title: "ZTEMP.1.0.24.0228 Zettel Template"
 
 # The value of the `title:` variable is a quoted string, 
 # consisting of a unique, immutable ID, in this case 
-# `immutableID`, followed by the Zettel title, in this case
-# "Zettel Template title" Immutable, unique IDs may have 
-# different formats, according to personal perference. 
+# `ZTEMP.1.0.24.0228`, followed by the Zettel title, in this case
+# "Zettel Template" Immutable, unique IDs may have 
+# different formats, according to personal preference. 
 # Timestamps are a popular choice, followed by Folgezettel. 
 
 reference-section-title: References
 
 # The `reference-section-title:` variable is a command to Pandoc.
-# If Zettel is exported through Pandoc and the Zettel 
-# body includes Pandoc-style citations, the 
-# `reference-section-title:` variable will cause a 
-# References section with citations to appear at the 
-# end of the document. 
+# If Zettel is exported through Pandoc and the Zettel body includes 
+# Pandoc-style citations, the `reference-section-title:` variable 
+# will cause Pandoc to add a References section with citations to the
+# end of the exported document. 
 ---
 ```
 
-# \# immutableID  Zettel title
+# ZTEMP.1.0.24.0228 Zettel Template
 
-This section is the H1 header, combining an immutable, unique ID followed by the Zettel title. The title should reflect the single focus of the Zettel. Titles aren't immutable, unlike IDs. 
+The Zettel body begins an H1 header. In my system, the H1 header duplicates the immutable, unique ID and title with the following syntax, however, this choice is optional.
+```markdown
+# immutableID title
+```
+Titles aren't immutable, unlike IDs. The Zettel body ends immediately before the **SEE ALSO** section below.
 
-NOTE: The Zettel body begins with the H1 header and ends immediately before the **SEE ALSO** section, below.
+## Definitions
 
-## Zettel body sub-section
+### Reference Element Types
 
-The body of a Zettel should adhere to the following three principles.
+- **WikiLink**: A markdown link used within Zettels to interlink them within the Zettelkasten system. It is enclosed in double square brackets and typically includes a unique identifier followed by the title of the linked Zettel.
 
-1. **Single-focus principle**: A Zettel must maintain a single focus.
-2. **WikiLinks usage**: WikiLinks indicate shifts in focus between different Zettels. WikiLinks in the body of the Zettel should be annotated to motivate or explain the shift in focus.
-3. **Future self orientation**: Zettels should be crafted with the author's future self in mind, prioritizing clarity and utility over general consumption.
+- **Title-only WikiLink**: This format includes the WikiLink followed immediately by the title of the linked Zettel without additional annotations or explanations, adhering strictly to the format: `[[UniqueID]] Zettel Title`.
+  
+- **Hashtags**: Hashtags are for thematic categorization and quick reference within your Zettelkasten. Hashtags typically occur in the SEE ALSO section of a Zettel.
 
-### Zetttl body sub-sub-section
+- **Pandoc citations**: Pandoc citations have the form `[@citeKey],` where `citeKey` is a citation Key for a citation maintained within a digital references management system such as Zotero or a manually created and maintained reference database.
 
-To keep the explanatoty text within the Zettel body, we describe the remaining sections: **SEE ALSO** and **References**.
+### Types of Notes in Zettelkasten
 
-- **SEE ALSO.** This section guides readers to related content, further contextualizing the Zettel focus without cluttering the body of the note. It includes an indented list of hashtags, WikiLinks to related Zettels, and one or more index Zettels. Hashtags and WikiLinks placed under the **SEE ALSO** section heading are self-explanatory. WikiLinks under **SEE ALSO** should include the Zettel title, but no additional annotation.
-     - In the **SEE ALSO** section below, I include the WikiLink and title `[[ZKID.0.23.0225]] ID Format`, which describes my choice of ID formats. Note that since the preceding WikiLink appears in the Zettel body, it is annotated with additional explanation, whereas under the **SEE ALSO** section, it is annotated only with the Zettel title "ID Format." 
-     - Next is the complete list of my index Zettels, which take advantage of the Related files pane of  Zettlr, and likewise with Obsidian. If the user navigates to an index Zettel, the Zettels that link to that index Zettel will appear in the "Related files" pane of Zettlr. This feature creates an alphabetical index for free. You need not use my indexing system.
-- **References.**  If there are Pandoc style references present in the body of the Zettel, such as `[@ahrensHowTakeSmart2017]`, the  `reference-section-title:` field in the YAML frontmatter will direct Pandoc to generate a References section at the end of the exported document. Otherwise, the References section can be added by hand or omitted if there are no citations.
+1. **Single-focus Zettels**: Focus on one main idea or topic for clarity and precision. Single-focus Zettels form the core of the Zettelkasten.
+
+2. **Structure Notes**: Outline and connect Single-focus Zettels under broader themes. They contain sections with annotated WikiLinks to individual Zettels.
+
+3. **Index Notes**: Serve as navigational tools within the Zettelkasten, marked by IDs starting with `0000.0000.0` and typically annotated with their title only.
+
+## Revised Zettel Construction Guidelines
+
+1. **ID and Title**:
+   - Start with a unique ID and clear title for each Zettel to ensure clarity and retrievability.
+
+2. **Main Body**:
+   - Prioritize writing Zettels with the author's future self in mind, emphasizing clarity and utility for the author rather than a general reader.
+   - **Single-focus Zettels**: Maintain a strict focus on one main idea or topic, crafting content for future clarity and utility. Annotate WikiLinks where they contribute to the topic's context, except for Index Note references. Links within the main body of a Single-focus Zettel should be directly related to the Zettel's central theme or idea and provide immediate, contextual support by offering additional information, evidence, or related viewpoints directly relevant to the Zettel's focus.
+   - **Structure Notes**: Organize and link related Single-focus Zettels under thematic sections, starting each section with a relevant annotated WikiLink.
+   - **Index Notes**: Use for navigation with a simple title annotation, listing relevant Single-focus or Structure Zettels for easy access.
+
+3. **SEE ALSO Section**:
+   - The SEE ALSO section serves as a gateway for expanded exploration and understanding, offering the reader pathways to discover related concepts and themes that might not be central to Zettel's current focus but are valuable for a broader understanding or future research.
+   - The separation between the Main Body and the SEE ALSO section helps maintain the focus and clarity of the main content while still providing avenues for further exploration and connectivity within the Zettelkasten.
+   - The SEE ALSO section should contain title-only WikiLinks that are not directly tied to the central theme of the Zettel but are still relevant to the broader thematic landscape of the note, including:
+     - **Index Note WikiLinks**: Title-only WikiLinks to Index Notes that help with navigation and alphanumeric categorization but are not directly related to the Zettel's main content.
+     - **Distantly Related Zettel Links**: Title-only WikiLinks to Zettels that provide additional context and support for the ideas presented or suggest further research but are not essential to understanding the primary focus of the current Zettel.
+     - **Hashtags and Metadata**: The SEE ALSO can also include relevant hashtags and metadata that aid in organizing and retrieving Zettels within the Zettelkasten system.
+   - Ensure all WikiLinks in the SEE ALSO section are title-only WikiLinks.
+
+4. **References**:
+   - List external sources or additional reading materials to support content validity and facilitate further exploration.
+
+NOTE: the main body of this Zettel ends here.
 
 ## SEE ALSO
-
- #this #section #contains #hashtags #then #wikilinks #with #titles #only
 
 [[ZKID.0.23.0225]] ID Format  
 [[0000.0000.0000]] INDEX  
@@ -69,6 +96,8 @@ To keep the explanatoty text within the Zettel body, we describe the remaining s
 [[0000.0000.0VWX]] V-W-X  
 [[0000.0000.00YZ]] Y-Z  
 [[0000.0000.0009]] 0-9  
+
+ #this #section #contains #hashtags #then #wikilinks #with #titles #only
 
 ## References
 
