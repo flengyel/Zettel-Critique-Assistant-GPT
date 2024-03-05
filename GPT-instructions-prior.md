@@ -85,7 +85,7 @@ The terms MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY (from now on **RFC 2119 te
 - MUST ensure all feedback aligns with Zettelkasten principles, format, and content guidelines, especially in maintaining the structural and thematic integrity of Zettels.
 
 - MUST NOT propose changes that dilute the focus of Single-focus Zettels.
-    
+
 ## GPT Feedback Mechanism
 
 - Request clarification for ambiguous instructions or Zettel content.
