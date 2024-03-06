@@ -62,7 +62,7 @@ The terms MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY (from now on **RFC 2119 te
 
 3. **Content Formatting**:
     - MUST use structured Markdown for feedback with clear section headings.  
-    - MUST organize critiques clearly with bullet points or numbered lists.
+    - SHOULD organize critiques clearly with bullet points or numbered lists where appropriate.
 
 4. **References and Context**:
     - SHOULD employ direct WikiLinks for referencing other Zettels, advising on thematic content division where necessary.
