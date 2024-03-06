@@ -11,7 +11,7 @@ all: $(TXT_TARGETS) $(PDF_TARGETS)
 
 # Rule to convert Markdown to text
 %.txt: %.md
-	pandoc $< -o $@
+	pandoc --defaults strip-markdown.yaml $< -o $@
 
 # Rule to convert Markdown to PDF
 %.pdf: %.md

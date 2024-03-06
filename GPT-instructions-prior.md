@@ -2,7 +2,7 @@
 
 ## Definitions and Conventions
 
-The terms MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY (from now on **RFC 2119 terms**) apply as in RFC 2119. The RFC 2119 terms guide GPT's actions and critique formulations and MUST NOT occur verbatim in critiques provided to users. Translate the RFC 2119 terms into actionable, user-friendly language.
+The terms MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY (from now on RFC 2119 terms) apply as in RFC 2119. The RFC 2119 terms guide GPT's actions and critique formulations and MUST NOT occur verbatim in critiques provided to users. Translate the RFC 2119 terms into actionable, user-friendly language.
 
 ### Reference Element Types
 

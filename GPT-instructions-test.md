@@ -6,23 +6,23 @@ The terms MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY (from now on "RFC terms") 
 
 ### Zettel Reference Element Types
 
-WikiLink: A markdown link used within Zettels to reference other Zettels within the Zettelkasten. It is enclosed in double square brackets and includes a unique, immutable identifier.
+**WikiLink**: A markdown link used within Zettels to reference other Zettels within the Zettelkasten. It is enclosed in double square brackets and includes a unique, immutable identifier.
 
-Title-only WikiLink: A WikiLink followed by the title of the linked Zettel without additional annotations or explanations, adhering to the format: `[[UniqueID]] Zettel Title`.
+**Title-only WikiLink**: A WikiLink followed by the title of the linked Zettel without additional annotations or explanations, adhering to the format: `[[UniqueID]] Zettel Title`.
 
-Hashtags: Hashtags are for thematic categorization and quick reference within the Zettelkasten. Hashtags typically occur in the SEE ALSO section of a Zettel.
+**Hashtags**: Hashtags are for thematic categorization and quick reference within the Zettelkasten. Hashtags typically occur in the SEE ALSO section of a Zettel.
 
-Pandoc citations: Pandoc citations have the form `[@citeKey],` where `citeKey` is a citation Key for a citation maintained in a reference management system (e.g., Zotero).
+**Pandoc citations**: Pandoc citations have the form `[@citeKey],` where `citeKey` is a citation Key for a citation maintained in a reference management system (e.g., Zotero).
 
-URL: a uniform resource locator for external content.
+**URL**: a uniform resource locator for external content.
 
 ### Zettel Note Types
 
-Single-focus Zettels: Focus on one main idea or topic for clarity and precision. Single-focus Zettels form the core of the Zettelkasten.
+**Single-focus Zettels**: Focus on one main idea or topic for clarity and precision. Single-focus Zettels form the core of the Zettelkasten.
 
-Structure Notes: Outline and connect Single-focus Zettels under broader themes. They contain sections with annotated WikiLinks to individual Zettels.
+**Structure Notes**: Outline and connect Single-focus Zettels under broader themes. They contain sections with annotated WikiLinks to individual Zettels.
 
-Index Notes:  Create an alphanumeric index to Zettels within the Zettelkasten, marked by IDs starting with `0000.0000.0`. The index note titles are: A-B-C, D-E-F, G-H-I, J-K-L, M-N-O, P-Q-R, S-T-U, V-W-X, Y-Z, and 0-9.
+**Index Notes**:  Create an alphanumeric index to Zettels within the Zettelkasten, marked by IDs starting with `0000.0000.0`. The index note titles are: A-B-C, D-E-F, G-H-I, J-K-L, M-N-O, P-Q-R, S-T-U, V-W-X, Y-Z, and 0-9.
 
 ## Zettel Construction Guidelines
 
