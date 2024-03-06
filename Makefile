@@ -30,10 +30,13 @@ clean:
 	$(RM) $(TXT_TARGETS) $(PDF_TARGETS)
 
 charcount:
-	ifeq ($(OS),Windows_NT)
-		for %%f in ($(TXT_TARGETS)) do @(type "%%f" | find /v /c "") & echo %%f
-	else
-		for f in $(TXT_TARGETS); do wc -m $$f | awk '{print $$1, $$2}'; done
-	endif
+ifeq ($(OS),Windows_NT)
+	@for %%f in ($(TXT_TARGETS)) do  @PowerShell -NoProfile -ExecutionPolicy Bypass -Command "$$content = [IO.File]::ReadAllText('%%f'); Write-Host '%%f: '$$content.Length"
+else
+	@for f in $(TXT_TARGETS); do wc -m $$f | awk '{print $$f, $$1}'; done
+endif
+
 
 .PHONY: all clean charcount
+
+
