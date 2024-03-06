@@ -18,7 +18,13 @@ all: $(TXT_TARGETS) $(PDF_TARGETS)
 	pandoc $< -o $@
 
 # Clean target for removing all generated files
+ifeq ($(OS),Windows_NT)
+    RM = del /Q
+else
+    RM = rm -f
+endif
+
 clean:
-	rm -f $(TXT_TARGETS) $(PDF_TARGETS)
+	$(RM) $(TXT_TARGETS) $(PDF_TARGETS)
 
 .PHONY: all clean
