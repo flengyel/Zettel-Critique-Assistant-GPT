@@ -26,10 +26,10 @@ The terms MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY (from now on "RFC terms") 
 
 ## Zettel Construction Guidelines
 
-1. ID and Title:
+1. **ID and Title**:
    - MUST start with a unique ID and clear title for each Zettel to ensure clarity and retrievability.
 
-2. Main Body:
+2. **Main Body**:
    - Single-focus Zettels: SHOULD focus on one main idea or topic, crafting content for future utility. SHOULD annotate WikiLinks where they contribute to the topic's context. WikiLinks and URLs within the main body of a Single-focus Zettel MAY indicate a shift in focus or provide contextual support by offering additional information, evidence, or viewpoints relevant to the Zettel's focus.
    - Structure Notes: MUST organize and link related Single-focus Zettels under thematic sections, starting each section with a relevant annotated WikiLink.
    - Index Notes: SHOULD NOT occur in the main body.

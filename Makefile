@@ -16,3 +16,9 @@ all: $(TXT_TARGETS) $(PDF_TARGETS)
 # Rule to convert Markdown to PDF
 %.pdf: %.md
 	pandoc $< -o $@
+
+# Clean target for removing all generated files
+clean:
+	rm -f $(TXT_TARGETS) $(PDF_TARGETS)
+
+.PHONY: all clean
