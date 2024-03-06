@@ -2,14 +2,15 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Build Markdown",
+            "label": "charcount",
             "type": "shell",
-            "command": "make",
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "problemMatcher": []
+            "command": "make charcount",
+            "group": "build",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            }
         }
     ]
 }

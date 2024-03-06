@@ -2,7 +2,9 @@
 MD_SOURCES := GPT-instructions.md GPT-instructions-prior.md GPT-instructions-test.md Zettel-template.md 
 TXT_SOURCES := $(MD_SOURCES) GPT-description.md
 
-# Define the target formats you want from each source
+# The text targets are generated using a custom pandoc template
+# The text targets are used for GPT instructions and the description
+# The PDF targets are generated using the default pandoc template
 TXT_TARGETS := $(TXT_SOURCES:.md=.txt)
 PDF_TARGETS := $(MD_SOURCES:.md=.pdf)
 
@@ -19,12 +21,19 @@ all: $(TXT_TARGETS) $(PDF_TARGETS)
 
 # Clean target for removing all generated files
 ifeq ($(OS),Windows_NT)
-    RM = del /Q
+	RM = del /Q
 else
-    RM = rm -f
+	RM = rm -f
 endif
 
 clean:
 	$(RM) $(TXT_TARGETS) $(PDF_TARGETS)
 
-.PHONY: all clean
+charcount:
+	ifeq ($(OS),Windows_NT)
+		for %%f in ($(TXT_TARGETS)) do @(type "%%f" | find /v /c "") & echo %%f
+	else
+		for f in $(TXT_TARGETS); do wc -m $$f | awk '{print $$1, $$2}'; done
+	endif
+
+.PHONY: all clean charcount
