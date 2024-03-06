@@ -1,40 +1,48 @@
+# ZTEMP.1.0.24.0228 Zettel Template
+
 ```yaml
 ---
-# Version: 2024.02.28.1
-# This self-documenting Zettel template specifies the format of 
-# a Zettel suitable for a digital Zettelkasten. The Zettel is
-# organized as a Markdown file, beginning with this YAML 
-# frontmatter followed by self-documenting Markdown sections 
-# in the order of presentation. The YAML frontmatter contains
-# commands to Zettlr, Pandoc, and Obsidian and includes, 
-# at minimum, the following variables: `title:` and 
-# `reference-section-title:` 
+ # Version: 2024.02.28.1
+ #
+ # NOTE: the H1 header at the beginning of this file is present
+ # to pass Markdown lint syntax checks. Remove the first line of
+ # this file when using this template. The template begins with
+ # the three dashes immediately above the version number.
+ #
+ # This self-documenting Zettel template specifies the format of 
+ # a Zettel suitable for a digital Zettelkasten. The Zettel is
+ # organized as a Markdown file, beginning with this YAML 
+ # frontmatter followed by self-documenting Markdown sections 
+ # in the order of presentation. The YAML frontmatter contains
+ # commands to Zettlr, Pandoc, and Obsidian and includes, 
+ # at minimum, the following variables: `title:` and 
+ # `reference-section-title:` 
 
-title: "ZTEMP.1.0.24.0228 Zettel Template"
+title: ZTEMP.1.0.24.0228 Zettel Template
 
-# The value of the `title:` variable is a quoted string, 
-# consisting of a unique, immutable ID, in this case 
-# `ZTEMP.1.0.24.0228`, followed by the Zettel title, in this case
-# "Zettel Template" Immutable, unique IDs may have 
-# different formats, according to personal preference. 
-# Timestamps are a popular choice, followed by Folgezettel. 
+ # The value of the `title:` variable is a quoted string, 
+ # consisting of a unique, immutable ID, in this case 
+ # `ZTEMP.1.0.24.0228`, followed by the Zettel title, in this case
+ # "Zettel Template" Immutable, unique IDs may have 
+ # different formats, according to personal preference. 
+ # Timestamps are a popular choice, followed by Folgezettel. 
 
 reference-section-title: References
 
-# The `reference-section-title:` variable is a command to Pandoc.
-# If Zettel is exported through Pandoc and the Zettel body includes 
-# Pandoc-style citations, the `reference-section-title:` variable 
-# will cause Pandoc to add a References section with citations to the
-# end of the exported document. 
+ # The `reference-section-title:` variable is a command to Pandoc.
+ # If Zettel is exported through Pandoc and the Zettel body includes 
+ # Pandoc-style citations, the `reference-section-title:` variable 
+ # will cause Pandoc to add a References section with citations to the
+ # end of the exported document. 
 ---
 ```
 
-# ZTEMP.1.0.24.0228 Zettel Template
+The Zettel body begins with an H1 header. In my system, the H1 header duplicates the immutable, unique ID (`ZTEMP.1.0.24.0228`) and title (`Zettel Template`) with the following syntax; however, this choice is optional.
 
-The Zettel body begins an H1 header. In my system, the H1 header duplicates the immutable, unique ID and title with the following syntax; however, this choice is optional.
 ```markdown
-# immutableID title
+# ZTEMP.1.0.24.0228 Zettel Template
 ```
+
 Titles aren't immutable, unlike IDs. The Zettel body ends immediately before the **SEE ALSO** section below.
 
 ## Customization notes
