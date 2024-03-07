@@ -14,7 +14,9 @@ PDF_TARGETS := $(MD_SOURCES:.md=.pdf)
 
 # Rule to convert Markdown to text
 %.txt: %.md
+	echo Generating $@ from $<
 	pandoc --defaults strip-markdown.yaml $< -o $@
+	echo Generated $@
 
 # Rule to convert Markdown to PDF
 %.pdf: %.md
@@ -29,23 +31,23 @@ endif
 
 clean:
 ifeq ($(OS),Windows_NT)
-	@PowerShell -NoProfile -ExecutionPolicy Bypass -Command "$$(Get-ChildItem -Path $(TXT_TARGETS) $(PDF_TARGETS) -ErrorAction SilentlyContinue).FullName | ForEach-Object { Remove-Item -ErrorAction SilentlyContinue -Path $$_ }"
+	$(foreach f,$(TXT_TARGETS) $(PDF_TARGETS),PowerShell -NoProfile -ExecutionPolicy Bypass -Command "Remove-Item -ErrorAction SilentlyContinue -Path '${f}'";)
 else
 	$(RM) $(TXT_TARGETS) $(PDF_TARGETS)
 endif
 
 charcount:
 ifeq ($(OS),Windows_NT)
-	@for %%f in ($(TXT_TARGETS)) do  @PowerShell -NoProfile -ExecutionPolicy Bypass -Command "$$content = [IO.File]::ReadAllText('%%f'); Write-Host '%%f: '$$content.Length"
+	for %%f in ($(TXT_TARGETS)) do  @PowerShell -NoProfile -ExecutionPolicy Bypass -Command "$$content = [IO.File]::ReadAllText('%%f'); Write-Host '%%f: '$$content.Length"
 else
-	@for f in $(TXT_TARGETS); do wc -m $$f | awk '{print $$f, $$1}'; done
+	for f in $(TXT_TARGETS); do wc -m $$f | awk '{print $$f, $$1}'; done
 endif
 
 post-process:
 ifeq ($(OS),Windows_NT)
-	@for %%f in ($(TXT_TARGETS)) do @(PowerShell -NoProfile -ExecutionPolicy Bypass -Command "$$content = [IO.File]::ReadAllText('%%f') -replace '\s+', ' ' -replace '\r\n', '\n' -replace '\n\n+', '\n'; [IO.File]::WriteAllText('%%f', $$content)")
+	$(foreach f,$(TXT_TARGETS),PowerShell -NoProfile -ExecutionPolicy Bypass -Command "if (Test-Path '${f}') { Write-Host 'File exists: ${f}' }";)
 else
-	@for f in $(TXT_TARGETS); do sed -i 's/^[ \t]*//;s/[ \t]*$$//;s/  +/ /g;/^$$/d' $$f; done
+	for f in $(TXT_TARGETS); do echo $$f; done
 endif
 
 .PHONY: all clean post-process charcount
