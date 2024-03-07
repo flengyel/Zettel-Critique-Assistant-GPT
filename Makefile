@@ -28,7 +28,11 @@ else
 endif
 
 clean:
+ifeq ($(OS),Windows_NT)
+	@PowerShell -NoProfile -ExecutionPolicy Bypass -Command "$$(Get-ChildItem -Path $(TXT_TARGETS) $(PDF_TARGETS) -ErrorAction SilentlyContinue).FullName | ForEach-Object { Remove-Item -ErrorAction SilentlyContinue -Path $$_ }"
+else
 	$(RM) $(TXT_TARGETS) $(PDF_TARGETS)
+endif
 
 charcount:
 ifeq ($(OS),Windows_NT)
