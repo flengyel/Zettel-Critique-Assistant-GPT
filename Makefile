@@ -1,16 +1,20 @@
-# Default target
-all: $(TXT_TARGETS) $(PDF_TARGETS) post-process
-
 # Define a list of source Markdown files
-MD_SOURCES := GPT-instructions.md GPT-instructions-prior.md GPT-instructions-test.md Zettel-template.md 
-TXT_SOURCES := $(MD_SOURCES) GPT-description.md
+MD_INSTRUCTIONS := GPT-instructions.md GPT-instructions-prior.md GPT-instructions-test.md
+MD_DESCRIPTION  := GPT-description.md
+MD_TEMPLATE     := Zettel-template.md
+MD_SOURCES := $(MD_INSTRUCTIONS) $(MD_DESCRIPTION) $(MD_TEMPLATE)
 
 # The text targets are generated using a custom pandoc template
 # The text targets are used for GPT instructions and the description
 # The PDF targets are generated using the default pandoc template
-TXT_TARGETS := $(TXT_SOURCES:.md=.txt)
+TXT_TARGETS := $(MD_SOURCES:.md=.txt)
 PDF_TARGETS := $(MD_SOURCES:.md=.pdf)
 
+# Eliminate conflict with built-in RM
+RM := /usr/bin/rm -f
+
+# Default target
+all: $(TXT_TARGETS) $(PDF_TARGETS) post-process
 
 # Rule to convert Markdown to text
 %.txt: %.md
@@ -22,13 +26,10 @@ PDF_TARGETS := $(MD_SOURCES:.md=.pdf)
 %.pdf: %.md
 	pandoc $< -o $@
 
-# Clean target for removing all generated files
-ifeq ($(OS),Windows_NT)
-	RM = del /Q
-else
-	RM = rm -f
-endif
+print-RM:
+	@echo "RM is set to $(RM)"
 
+# Clean target for removing all generated files
 clean:
 ifeq ($(OS),Windows_NT)
 	$(foreach f,$(TXT_TARGETS) $(PDF_TARGETS),PowerShell -NoProfile -ExecutionPolicy Bypass -Command "Remove-Item -ErrorAction SilentlyContinue -Path '${f}'";)
@@ -36,19 +37,34 @@ else
 	$(RM) $(TXT_TARGETS) $(PDF_TARGETS)
 endif
 
-charcount:
-ifeq ($(OS),Windows_NT)
-	for %%f in ($(TXT_TARGETS)) do  @PowerShell -NoProfile -ExecutionPolicy Bypass -Command "$$content = [IO.File]::ReadAllText('%%f'); Write-Host '%%f: '$$content.Length"
-else
-	for f in $(TXT_TARGETS); do wc -m $$f | awk '{print $$f, $$1}'; done
-endif
 
 post-process:
 ifeq ($(OS),Windows_NT)
-	$(foreach f,$(TXT_TARGETS),PowerShell -NoProfile -ExecutionPolicy Bypass -Command "if (Test-Path '${f}') { Write-Host 'File exists: ${f}' }";)
+	@$(foreach f,$(TXT_TARGETS),PowerShell -NoProfile -ExecutionPolicy Bypass -Command "if (Test-Path '${f}') { Write-Host 'File exists: ${f}' }";)
+	# Add PowerShell command for special processing of GPT-description.txt if needed
 else
-	for f in $(TXT_TARGETS); do echo $$f; done
+	@for f in $(TXT_TARGETS); do sed -i 's/[ \t]*$$//; s/^[ \t]*//; /^$$/N; /\n$$/D; s/  */ /g' $$f; echo "Processed $$f"; done
+	# Special processing for GPT-description.txt
+	@sed -i '1d;s/  */ /g' GPT-description.txt; echo "Processed GPT-description.txt"
 endif
 
-.PHONY: all clean post-process charcount
 
+# remove consequtive spaces and newlines, and warn if instructions exceed 8000 characters
+# and if the description exceeds 300 characters
+charcount:
+ifeq ($(OS),Windows_NT)
+	@for %%f in ($(TXT_TARGETS)) do @PowerShell -NoProfile -ExecutionPolicy Bypass -Command "$$content = [IO.File]::ReadAllText('%%f'); if ('%%f' -eq 'GPT-description.txt' -and $$content.Length -gt 300) { Write-Host '%%f: TOO LONG ('$$content.Length' characters, max 300)'} elseif ($$content.Length -le 8000) { Write-Host '%%f: OK ('$$content.Length' characters)'} else { Write-Host '%%f: TOO LONG ('$$content.Length' characters)' }"
+else
+	@for f in $(TXT_TARGETS); do \
+		count=$$(wc -m < "$$f" | awk '{print $$1}'); \
+		if [ "$$f" = "GPT-description.txt" ] && [ $$count -gt 300 ]; then \
+			echo "$$f: TOO LONG ($$count characters, max 300)"; \
+		elif [ $$count -le 8000 ]; then \
+			echo "$$f: OK ($$count characters)"; \
+		else \
+			echo "$$f: TOO LONG ($$count characters)"; \
+		fi; \
+	done
+endif
+
+.PHONY: all clean post-process charcount print-RM
