@@ -42,9 +42,9 @@ ifeq ($(OS),Windows_NT)
 		pwsh -noprofile -command ".\replace.ps1 -FilePath '.\$(f)'"; \
 		echo "Processed $(f)";)
 else
-	@for f in $(TXT_TARGETS); do sed -i 's/[ \t]*$$//; s/^[ \t]*//; /^$$/N; /\s\s*/ /g' $$f; echo "Processed $$f"; done
-        # Special processing for GPT-description.txt
-        @sed -i '2d;s/  */ /g' GPT-description.txt; echo "Processed GPT-description.txt"
+	@for f in $(TXT_TARGETS); do sed -i 's/[ \t][ \t]*/ /g' $$f; echo "Processed $$f"; done
+	# Special processing for GPT-description.txt
+	@sed -i '1,2d' GPT-description.txt; echo "Processed GPT-description.txt"
 endif
 
 charcount:
