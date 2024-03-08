@@ -15,7 +15,7 @@ PDF_TARGETS := $(MD_SOURCES:.md=.pdf)
 RM := /usr/bin/rm -f
 
 # Default target
-all: $(TXT_TARGETS) $(PDF_TARGETS) post-process
+all: $(TXT_TARGETS) $(PDF_TARGETS) post-process charcount
 
 # Rule to convert Markdown to text
 %.txt: %.md
@@ -50,16 +50,7 @@ endif
 charcount:
 ifeq ($(OS),Windows_NT)
 	@$(foreach f,$(TXT_TARGETS), \
-		PowerShell -NoProfile -ExecutionPolicy Bypass -Command \
-		"$$content = Get-Content '${f}' -Raw; \
-		if ('${f}' -match 'GPT-instructions' -and $$content.Length -gt 8000) { \
-			Write-Host '${f}: TOO LONG ('$$content.Length' characters, max 8000)'; \
-		} elseif ('${f}' -eq 'GPT-description.txt' -and $$content.Length -gt 300) { \
-			Write-Host '${f}: TOO LONG ('$$content.Length' characters, max 300)'; \
-		} else { \
-			Write-Host '${f}: OK ('$$content.Length' characters)'; \
-		}"; \
-	)
+		pwsh -noprofile -command ".\charcount.ps1 -FilePath '.\$(f)'";)
 else
 	@for f in $(TXT_TARGETS); do \
 		count=$$(wc -m < "$$f" | awk '{print $$1}'); \
@@ -74,4 +65,3 @@ else
 endif
 
 .PHONY: all clean charcount print-RM post-process
-
