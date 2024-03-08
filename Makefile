@@ -14,12 +14,13 @@ PDF_TARGETS := $(MD_SOURCES:.md=.pdf)
 RM := /usr/bin/rm -f
 
 # Default target
-all: $(TXT_TARGETS) $(PDF_TARGETS) post-process
+all: $(TXT_TARGETS) $(PDF_TARGETS)
 
 # Rule to convert Markdown to text
 %.txt: %.md
 	echo Generating $@ from $<
-	pandoc --defaults strip-markdown.yaml $< -o $@
+	echo pandoc --lua-filter=remove-spaces-and-newlines.lua --defaults strip-markdown.yaml $< -o $@
+	pandoc --lua-filter=remove-spaces-and-newlines.lua --defaults strip-markdown.yaml $< -o $@
 	echo Generated $@
 
 # Rule to convert Markdown to PDF
@@ -37,24 +38,7 @@ else
 	$(RM) $(TXT_TARGETS) $(PDF_TARGETS)
 endif
 
-post-process:
-ifeq ($(OS),Windows_NT)
-	@$(foreach f,$(TXT_TARGETS), \
-		pwsh -noprofile -command "& {.\replace.ps1 -FilePath '.\\$(f)'}"; )
-#	pwsh -noprofile -command "& {.\replace.ps1 -FilePath '.\\GPT-instructions.txt'}"
-#	pwsh -noprofile -command "& {.\replace.ps1 -FilePath '.\\GPT-instructions-prior.txt'}"
-#	pwsh -noprofile -command "& {.\replace.ps1 -FilePath '.\\GPT-instructions-test.txt'}"
-#	pwsh -noprofile -command "& {.\replace.ps1 -FilePath '.\\GPT-description.txt'}"
-#	pwsh -noprofile -command "& {.\replace.ps1 -FilePath '.\\Zettel-template.txt'}"
-else	
-	@for f in $(TXT_TARGETS); do sed -i 's/[ \t]*$$//; s/^[ \t]*//; /^$$/N; /\n$$/D; s/  */ /g' $$f; echo "Processed $$f"; done
-	# Special processing for GPT-description.txt
-	@sed -i '1d;s/  */ /g' GPT-description.txt; echo "Processed GPT-description.txt"
-endif
 
-
-# remove consequtive spaces and newlines, and warn if instructions exceed 8000 characters
-# and if the description exceeds 300 characters
 charcount:
 ifeq ($(OS),Windows_NT)
 	@$(foreach f,$(TXT_TARGETS), \
@@ -73,7 +57,7 @@ else
 		count=$$(wc -m < "$$f" | awk '{print $$1}'); \
 		if [ "$$f" = "GPT-description.txt" ] && [ $$count -gt 300 ]; then \
 			echo "$$f: TOO LONG ($$count characters, max 300)"; \
-x 		elif [ $$count -le 8000 ]; then \
+		elif [ $$count -le 8000 ]; then \
 			echo "$$f: OK ($$count characters)"; \
 		else \
 			echo "$$f: TOO LONG ($$count characters)"; \
@@ -81,4 +65,4 @@ x 		elif [ $$count -le 8000 ]; then \
 	done
 endif
 
-.PHONY: all clean post-process charcount print-RM
+.PHONY: all clean charcount print-RM
