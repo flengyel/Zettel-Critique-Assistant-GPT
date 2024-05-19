@@ -1,3 +1,5 @@
+Text of GPT Description
+
 Critique Zettels, following the template in
 https://github.com/flengyel/Zettel-Critique-Assistant-GPT. The GPT will
 build Zettels, suggest how to split multi-focused notes into separate
