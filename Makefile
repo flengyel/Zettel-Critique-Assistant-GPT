@@ -1,9 +1,10 @@
 # Define a list of source Markdown files
-MD_INSTRUCTIONS := GPT-instructions.md GPT-instructions-prior.md GPT-instructions-test.md
+MD_INSTRUCTIONS := GPT-instructions.md 
 MD_DESCRIPTION  := GPT-description.md
-MD_TEMPLATE     := Zettel-template.md
+#MD_TEMPLATE     := Zettel-template.md
 TXT_SOURCES    := $(MD_INSTRUCTIONS) $(MD_DESCRIPTION)
-MD_SOURCES := $(MD_INSTRUCTIONS) $(MD_DESCRIPTION) $(MD_TEMPLATE)
+#MD_SOURCES := $(MD_INSTRUCTIONS) $(MD_DESCRIPTION) $(MD_TEMPLATE)
+MD_SOURCES := $(MD_INSTRUCTIONS) $(MD_DESCRIPTION)
 
 # The text targets are generated using a custom pandoc template
 # The text targets are used for GPT instructions and the description
