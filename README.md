@@ -16,7 +16,7 @@ The assistant offers guidance on:
 
 ## Purpose
 
-This repository provides the operational instructions for the Zettel Critique Assistant GPT, aligning with the latest Zettelkasten principles to ensure a structured, efficient, and focused approach to note-taking and knowledge management.
+This repository provides the operational instructions for the Zettel Critique Assistant GPT.
 
 ## Usage
 
